@@ -5,7 +5,7 @@
 Interactive simulator of a simple, tunable model of societal progress. It is designed for exploration, not forecasting, and serves as a portfolio‑grade example of AI‑assisted research → simulation.
 
 Planned deployment:
-[wrightsocietalmodel.com]
+[https://wrightsocietalmodel.com/]
 
 ---
 
