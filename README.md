@@ -52,6 +52,16 @@ A `CITATION.cff` file will be added once the first archived release is created (
 
 ---
 
+## Author
+
+**Shawn C. Wright**  
+AI-Assisted Researcher | Developer of the Societal Health Simulator  
+
+- ORCID: [0009-0006-6043-9295](https://orcid.org/0009-0006-6043-9295)  
+- Email: (shawnkardin (at) gmail (dot) com)  
+
+---
+
 ## License
 
 This work is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International** license (CC BY-NC-SA 4.0).  
