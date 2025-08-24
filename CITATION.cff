@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: "Societal Health Simulator — Black Mirror Tamagotchi Edition"
+message: "If you use this simulator in your work, please cite it as below."
+type: software
+authors:
+  - family-names: "Wright"
+    given-names: "Shawn C."
+    orcid: "https://orcid.org/0009-0006-6043-9295"
+repository-code: "https://github.com/Wright-Shawn/Societal-Progress-Simulator"
+url: "https://wrightsocietalmodel.com/"
+license: "CC-BY-NC-SA-4.0"
+version: "0.1.0"
+date-released: "2025-08-23"
+doi: "10.5281/zenodo.TBD"
