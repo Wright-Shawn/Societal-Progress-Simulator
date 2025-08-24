@@ -4,7 +4,7 @@
 
 Interactive web-based simulator of a toy model of societal health. It is designed for **exploration, not forecasting**, and serves as a portfolio-grade example of AI-assisted research → simulation.
 
-👉 [wrightsocietalmodel.com](https://wrightsocietalmodel.com/)
+[wrightsocietalmodel.com](https://wrightsocietalmodel.com/)
 
 ---
 
