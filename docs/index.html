@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Societal Health Simulator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+    color: #333;
+  }
+  header {
+    background: #4a90e2;
+    color: white;
+    padding: 1em;
+    text-align: center;
+  }
+  main {
+    max-width: 600px;
+    margin: 2em auto;
+    background: white;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .slider-group {
+    margin-bottom: 1.5em;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.3em;
+    font-weight: bold;
+  }
+  input[type=range] {
+    width: 100%;
+  }
+  .description {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 0.5em;
+  }
+  .status {
+    text-align: center;
+    margin-top: 1em;
+    padding: 1em;
+    border-radius: 6px;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  .thriving { background: #c8f7c5; color: #2d7a2d; }
+  .struggling { background: #fff3cd; color: #856404; }
+  .collapsing { background: #f8d7da; color: #721c24; }
+  .presets {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .presets button {
+    margin: 0.2em;
+    padding: 0.5em 1em;
+    border: none;
+    background: #4a90e2;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .presets button:hover {
+    background: #3f7ec4;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Societal Health Simulator</h1>
+    <p>Adjust the sliders to see how your society fares</p>
+  </header>
+  <main>
+    <div class="presets">
+      <button onclick="loadPreset('rome')">Ancient Rome at Peak</button>
+      <button onclick="loadPreset('depression')">Great Depression (USA)</button>
+    </div>
+    <div class="slider-group">
+      <label for="fairness">Fairness of Resources</label>
+      <div class="description">How evenly food, housing, income, and healthcare are shared.</div>
+      <input type="range" id="fairness" min="0" max="100" value="70" oninput="updateValue()">
+    </div>
+    <div class="slider-group">
+      <label for="education">Education Quality</label>
+      <div class="description">Access to quality education and critical thinking skills.</div>
+      <input type="range" id="education" min="0" max="100" value="75" oninput="updateValue()">
+    </div>
+    <div class="slider-group">
+      <label for="trust">Social Trust</label>
+      <div class="description">How much people trust each other and work together.</div>
+      <input type="range" id="trust" min="0" max="100" value="65" oninput="updateValue()">
+    </div>
+    <div class="slider-group">
+      <label for="stability">Government Stability</label>
+      <div class="description">Low = stable, High = chaotic and corrupt.</div>
+      <input type="range" id="stability" min="0" max="100" value="40" oninput="updateValue()">
+    </div>
+    <div class="slider-group">
+      <label for="misinfo">Misinformation Level</label>
+      <div class="description">High values mean lots of fake news and propaganda.</div>
+      <input type="range" id="misinfo" min="0" max="100" value="30" oninput="updateValue()">
+    </div>
+    <div id="statusBox" class="status"></div>
+  </main>
+<script>
+function updateValue() {
+  const fairness = parseInt(document.getElementById('fairness').value);
+  const education = parseInt(document.getElementById('education').value);
+  const trust = parseInt(document.getElementById('trust').value);
+  const stability = parseInt(document.getElementById('stability').value);
+  const misinfo = parseInt(document.getElementById('misinfo').value);
+
+  // Simple scoring system
+  const positive = (fairness + education + trust) / 3;
+  const negative = (stability + misinfo) / 2;
+  const score = positive - negative;
+
+  const statusBox = document.getElementById('statusBox');
+  if (score > 30) {
+    statusBox.textContent = "Your society is THRIVING";
+    statusBox.className = "status thriving";
+  } else if (score > 0) {
+    statusBox.textContent = "Your society is STRUGGLING";
+    statusBox.className = "status struggling";
+  } else {
+    statusBox.textContent = "Your society is COLLAPSING";
+    statusBox.className = "status collapsing";
+  }
+}
+
+function loadPreset(preset) {
+  if (preset === 'rome') {
+    document.getElementById('fairness').value = 80;
+    document.getElementById('education').value = 60;
+    document.getElementById('trust').value = 70;
+    document.getElementById('stability').value = 20;
+    document.getElementById('misinfo').value = 15;
+  } else if (preset === 'depression') {
+    document.getElementById('fairness').value = 40;
+    document.getElementById('education').value = 50;
+    document.getElementById('trust').value = 30;
+    document.getElementById('stability').value = 60;
+    document.getElementById('misinfo').value = 25;
+  }
+  updateValue();
+}
+
+// Initialize
+updateValue();
+</script>
+</body>
+</html>
