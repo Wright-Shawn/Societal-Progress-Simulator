@@ -24,7 +24,7 @@ where:
 - **Misinformation (D)** — higher = more fake news and propaganda  
 - **α, β** — exponents tuning nonlinear sensitivity  
 
-📝 **Note:** The current web version implements a **simplified scoring system** (linear averages of positives and negatives). The full equation is reserved for future iterations.  
+# **Note:** The current web version implements a **simplified scoring system** (linear averages of positives and negatives). The full equation is reserved for future iterations.  
 
 This deliberate imperfection demonstrates how AI-assisted work can be logged, validated, and iteratively improved.  
 
